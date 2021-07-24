@@ -15,9 +15,10 @@ Including another URConf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from CommunicationLTD import views as user_views
 
 urlpatterns = [
     path('', include('CommunicationLTD.urls')),
-    path('admin/', admin.site.urls),
+    path(r'admin/', admin.site.urls),
+    path('signup/', user_views.register, name='signup'),
 ]
